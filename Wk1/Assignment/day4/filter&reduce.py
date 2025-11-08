@@ -23,6 +23,7 @@ print(higher_grades_stud)
 
 #3. Concatenate Strings
 #Given a list of strings, concatenate them into a single string using reduce.
+
 from functools import reduce
 #The function you pass to reduce() must take exactly two arguments because:
 #reduce() combines elements pair by pair, step by step.
