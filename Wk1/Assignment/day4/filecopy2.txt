@@ -1,0 +1,11 @@
+Delta compression using up to 8 threads
+Compressing objects: 100% (28/28), done.
+Writing objects: 100% (33/33), 10.15 KiB | 2.03 MiB/s, done.
+Total 33 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/TRNG-00002321/Moses-repo.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+mosessaah@mosess-MacBook-Pro-2 QA % git push -u origin main                                              
+branch 'main' set up to track 'origin/main'.
+Everything up-to-date
+mosessaah@mosess-MacBook-Pro-2 QA % 

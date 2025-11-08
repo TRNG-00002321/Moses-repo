@@ -1,0 +1,12 @@
+{
+    "name": "Alice",
+    "age": 30,
+    "city": "New York",
+    "is_student": false,
+    "courses": [
+        "Math",
+        "Science",
+        "Art"
+    ]
+}
+{"name": "Moses", "age": 25, "job": "QA Engineer"}

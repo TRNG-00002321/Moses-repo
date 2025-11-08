@@ -1,0 +1,65 @@
+1. Logging: Logging is the process of recording events that happen while a program runs — things like:
+    What your code is doing
+    Errors or exceptions
+    User activity
+    System or performance info  
+Why We Use Logging
+- Debugging: Helps identify what went wrong and where.
+- Monitoring: Useful for tracking system health and usage patterns.
+- Auditing: Keeps records of critical actions (e.g., user logins, transactions).
+- Persistence: Can write logs to files, not just the console — so info isn’t lost.
+
+Logging Levels (from least to most serious)
+Python’s logging module defines 5 standard levels of importance:
+Level	Meaning	Typical Use
+- DEBUG: Detailed info for developers Troubleshooting logic
+- INFO:	General events confirming things work	System startup, function complete
+- WARNING: Something unexpected but program continues eg. Deprecated feature used
+- ERROR	Serious issue, something failed	API call failed, file not found
+- CRITICAL	Very serious error	System crash or data loss risk
+
+2. Anonymous Functions: 
+
+- What they are: Functions that are not defined with a name. They are defined and used right where they are needed.
+  The main purpose: To provide a quick, one-time operation, usually as an argument to another function.
+  The "Why": They keep your code clean and avoid cluttering your program with many small, single-use function names.
+
+- Lambda Functions:Lambda functions are small, anonymous functions defined using the lambda keyword in Python
+Key Characteristics
+Anonymous: No formal function name
+Single expression: Can only contain one expression
+Inline: Typically used for short, simple operations
+First-class objects: Can be assigned to variables, passed as arguments
+
+3. Generator Expressions - Self learning
+
+The Core Concept
+Think of generator expressions as "lazy lists" - they generate items one at a time on demand, rather than storing everything in memory at once.
+
+Key Characteristics
+
+- Memory Efficiency
+  Lists: Store ALL elements in memory
+  Generators: Generate ONE element at a time, then forget it
+
+- Lazy Evaluation
+  Elements are computed only when requested
+  Perfect for large datasets or infinite sequences
+
+- Single-Use
+  Once you iterate through a generator, it's exhausted
+  You can't go back to previous elements
+
+Use Generator Expressions When:
+
+Working with large datasets
+You only need to process items once
+Memory usage is a concern
+Dealing with data streams or infinite sequences
+Chaining multiple operations
+
+4. map filter and reduce function in python
+
+5. zip function in python
+
+6. File Handling
