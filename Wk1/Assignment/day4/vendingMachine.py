@@ -3,7 +3,7 @@
 
 #Use your knowledge of if, elif, and else statements to complete this part of the problem. Your code should
 #have an else statement that prints a message and ends the program using sys.exit() if the user does not enter a valid
-#input number. 
+#input number.
 #1.Your program should take an integer as an input from the user (either a 1, 2, or 3) that corresponds with an option
 # for a drink from the vending machine outlined below and assign the corresponding price to a variable as a float.
 #Vending Machine:
@@ -36,7 +36,7 @@ def prompt():
     nickles = int(input(f"Enter the number of quator")) * 0.5
     pennies = int(input(f"Enter the number of quator")) * 0.01
 
-    return  quaters + dimes + nickles + pennies 
+    return  quarters + dimes + nickles + pennies
 
 # The Tranaction is done here
 def vend(d, m):
@@ -45,7 +45,7 @@ def vend(d, m):
     else:
         return "Sorry try again with correct amount"
 
-# dict with the drinks 
+# dict with the drinks
 drinks = {
     1: {"drink": "Water", "price": 1.00},
     2: {"drink": "Coke", "price": 1.50},

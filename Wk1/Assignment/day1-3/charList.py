@@ -3,7 +3,7 @@
 
 words = ["apple", "banana", "mango", "corn", "orange", "aaa"]
 
-def sameChar(l1):
+def same_char(l1):
     n = []
     for item in words:
         if "a" in item:

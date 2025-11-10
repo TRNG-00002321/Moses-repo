@@ -12,9 +12,9 @@ try:
 except:
     print(f"invalid entry")
 
+# Open a json file and write data to it
 with open("data1.json", "a") as json_file:
     json.dump(data, json_file)
-
 
 # Search for name in the json file, and return the details of that name.
 with open("data1.json", "r") as json_file:
@@ -25,4 +25,3 @@ with open("data1.json", "r") as json_file:
             break
     else:
         print(f"No details found for the name: {name}")
-    

@@ -22,7 +22,7 @@ with open("fileExample.txt", "r") as file:
     for line in file:
         print(line.strip())  # strip() removes leading/trailing whitespace
 
-Reading in chunks: Useful for large files
+#Reading in chunks: Useful for large files
 with open("fileExample.txt", "r") as file:
     while chunck := file.read(1024):
         print(chunck)
