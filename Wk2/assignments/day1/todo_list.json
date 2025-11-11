@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Piano",
+        "description": "need to practice",
+        "status": "complete"
+    },
+    {
+        "name": "Photography",
+        "description": "Second Hobby",
+        "status": "incomplete"
+    },
+    {
+        "name": "Networking",
+        "description": "Fundementals and Concepts",
+        "status": "incomplete"
+    }
+]

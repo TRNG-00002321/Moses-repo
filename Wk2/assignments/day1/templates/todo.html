@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Todo List</title>
+</head>
+<body>
+    <div>
+        <h1>Todo List</h1>
+        <div>
+            <h2>Add a new todo item</h2>
+            <form method="post" action='/todo'>
+                <input type="text" name="item" placeholder=" title" required>
+                <input type="text" name="description" placeholder="enter description" required>
+                <button type="submit">Add</button>
+            </form>
+        </div>
+        <div>
+            <h2>Current Todo Items</h2>
+            <ul>
+                {% for todo in todos %}
+                    <li>
+                        <strong>{{ todo.name }}</strong>: {{ todo.description }}
+                        <form method="post" action='/delete_todo' style="display:inline;">
+                            <input type="hidden" name="item" value="{{ todo.name }}">
+                            {% if todo.status == "complete" %}
+                                <button type="submit" class="complete">✅ Completed</button>
+                            {% else %}
+                                <button type="submit" class="incomplete">⬜ Incomplete</button>
+                            {% endif %}
+                            <button type="submit">Delete</button>
+                        </form>
+                    </li>
+                {% else %}
+                    <li>No todo items yet.</li>
+                {% endfor %}
+            </ul>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
