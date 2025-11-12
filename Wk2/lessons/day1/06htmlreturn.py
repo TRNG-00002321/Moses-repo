@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-# Program to display score base on the the user input of marks
+# Program to display score base on the user input of marks
 app = Flask(__name__)
 
 @app.route('/scores/<int:score>')

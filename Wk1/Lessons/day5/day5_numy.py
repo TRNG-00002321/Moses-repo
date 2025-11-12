@@ -16,13 +16,11 @@
 
 # ## Import NumPy
 # Once NumPy is installed, import it in your applications by adding the import keyword<br/>
-# `import numpy`
 
 ## Create a NumPy ndarray Object
 # NumPy is used to work with arrays. The array object in NumPy is called ndarray.
 # We can create a NumPy ndarray object by using the array() function.
-#
-# ```python
+
 import numpy as np
 arr = np.array([1, 2, 3, 4, 5])
 print(arr)
@@ -31,13 +29,12 @@ print(type(arr))
 # OUTPUT
 # [1 2 3 4 5]
 # <class 'numpy.ndarray'>
-# ```
 
 ## Dimensions in Arrays
 # A dimension in arrays is one level of array depth (nested arrays).
 # **0-D Arrays**
 # 0-D arrays, or Scalars, are the elements in an array. Each value in an array is a 0-D array.
-# ```python
+
 # import numpy as np
 arr = np.array(42)
 print(arr)
@@ -45,15 +42,15 @@ print(arr)
 # **1-D Arrays**
 # An array that has 0-D arrays as its elements is called uni-dimensional or 1-D array.
 # These are the most common and basic arrays.
-# ```python
+
 # import numpy as np
 arr = np.array([1, 2, 3, 4, 5])
 print(arr)
-# ```
+
 # **2-D Arrays**
 # An array that has 1-D arrays as its elements is called a 2-D array.
 # These are often used to represent matrix or 2nd order tensors.
-# ```python
+
 # import numpy as np
 arr = np.array([[1, 2, 3], [4, 5, 6]])
 print(arr)
@@ -61,7 +58,7 @@ print(arr)
 
 # **Check Number of Dimensions?**
 # NumPy Arrays provides the `ndim` attribute that returns an integer that tells us how many dimensions the array have.
-# ```python
+
 # import numpy as np
 
 a = np.array(42)
@@ -78,7 +75,7 @@ print(d.ndim)
 # **Higher Dimensional Arrays**
 # An array can have any number of dimensions.
 # When the array is created, you can define the number of dimensions by using the ndmin argument.
-# ```python
+
 # import numpy as np
 
 arr = np.array([1, 2, 3, 4], ndmin=5)
@@ -114,20 +111,20 @@ print('5th element on 2nd row: ', arr[1, 4])
 # To access elements from 3-D arrays we can use comma separated integers representing the dimensions and the index of the element.
 #
 # _Access the third element of the second array of the first array:_
-# ```python
+
 # import numpy as np
 arr = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
 print(arr[0, 1, 2])
 
 # # OUTPUT
 # arr[0, 1, 2] prints the value 6.
-# ```
+
 #
 # **Negative Indexing**
 # Use negative indexing to access an array from the end.
 #
 # _Print the last element from the 2nd dim:_
-# ```pyt_hon
+
 # import numpy as np
 arr = np.array([[1,2,3,4,5], [6,7,8,9,10]])
 print('Last element from 2nd dim: ', arr[1, -1])
@@ -144,11 +141,11 @@ print('Last element from 2nd dim: ', arr[1, -1])
 # If we don't pass step its considered 1
 
 # _Slice elements from index 1 to index 5 from the following array:_
-# ```python
+
 # import numpy as np
 arr = np.array([1, 2, 3, 4, 5, 6, 7])
 print(arr[1:5])
-# ```
+
 # **Note: The result includes the start index, but excludes the end index.**
 # #### Other Examples
 # - **`Slice elements from index 4 to the end of the array: print(arr[4:])`**
@@ -157,25 +154,25 @@ print(arr[1:5])
 # **Negative Slicing**
 # Use the minus operator to refer to an index from the end:
 # Slice from the index 3 from the end to index 1 from the end:
-# ```python
+
 # import numpy as np
 arr = np.array([1, 2, 3, 4, 5, 6, 7])
 print(arr[-3:-1])
-# ```
+
 
 # **STEP**
 # Use the step value to determine the step of the slicing:
 #
 # _Return every other element from index 1 to index 5:_
-# ```python
+
 # import numpy as np
 arr = np.array([1, 2, 3, 4, 5, 6, 7])
 print(arr[1:5:2])
-# ```
+
 
 # **Slicing 2-D Arrays**
 # _From the second element, slice elements from index 1 to index 4 (not included):_
-# ```python
+
 # import numpy as np
 arr = np.array([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]])
 print(arr[1, 1:4])
@@ -199,7 +196,7 @@ print(arr[1, 1:4])
 # **Checking the Data Type of an Array**
 # The NumPy array object has a property called dtype that returns the data type of the array:
 # _Get the data type of an array object:_
-# ```python
+
 # import numpy as np
 arr = np.array([1, 2, 3, 4])
 print(arr.dtype)
@@ -209,7 +206,7 @@ print(arr.dtype)
 # We use the array() function to create arrays, this function can take an optional argument: dtype that allows us to
 # define the expected data type of the array elements:
 # _Create an array with data type string:_
-# ```python
+
 # import numpy as np
 arr = np.array([1, 2, 3, 4], dtype='S')
 print(arr)
@@ -241,7 +238,7 @@ print(arr.shape)
 # **Reshape From 1-D to 2-D**
 # Convert the following 1-D array with 12 elements into a 2-D array.
 # The outermost dimension will have 4 arrays, each with 3 elements:
-# ```python
+
 # import numpy as np
 arr = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
 newarr = arr.reshape(4, 3)
@@ -256,7 +253,7 @@ print(newarr)
 # **Reshape From 1-D to 3-D**
 # Convert the following 1-D array with 12 elements into a 3-D array.
 # The outermost dimension will have 2 arrays that contains 3 arrays, each with 2 elements:
-# ```python
+
 # import numpy as np
 arr = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
 newarr = arr.reshape(2, 3, 2)
@@ -277,7 +274,7 @@ print(newarr)
 # We can use reshape(-1) to do this.
 #
 # _Convert the array into a 1D array:_
-# ```python
+
 # import numpy as np
 arr = np.array([[1, 2, 3], [4, 5, 6]])
 newarr = arr.reshape(-1)
@@ -285,7 +282,7 @@ print(newarr)
 
 # # OUTPUT
 # [1 2 3 4 5 6]
-# ```
+
 
 ## NumPy Array Iterating  
 # Iterating means going through elements one by one.
@@ -293,14 +290,14 @@ print(newarr)
 # If we iterate on a 1-D array it will go through each element one by one.
 #
 # _Iterate on the elements of the following 1-D array:_
-# ```python
+
 import numpy as np
 arr = np.array([1, 2, 3])
 for x in arr:
   print(x)
 
 # **Iterating 3-D Arrays**
-# ```python
+
 # import numpy as np
 
 arr = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
@@ -319,7 +316,6 @@ for x in arr:
 # In basic for loops, iterating through each scalar of an array we need to use n for loops which can be difficult to
 # write for arrays with very high dimensionality.
 #
-# ```python
 # import numpy as np
 arr = np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])
 for x in np.nditer(arr):
@@ -327,7 +323,7 @@ for x in np.nditer(arr):
 
 
 # **Iterate through every scalar element of the 2D array skipping 1 element:**
-# ```python
+
 import numpy as np
 arr = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])
 for x in np.nditer(arr[:, ::2]):
@@ -342,7 +338,6 @@ for x in np.nditer(arr[:, ::2]):
 # explicitly passed, it is taken as 0.
 #
 # _Join two arrays_
-# ```python
 # import numpy as np
 arr1 = np.array([1, 2, 3])
 arr2 = np.array([4, 5, 6])
@@ -433,7 +428,6 @@ print(x)
 arr = np.array([6, 7, 8, 9])
 x = np.searchsorted(arr, 7, side='right')
 print(x)
-
 
 ## NumPy Sorting Arrays  
 # Sorting means putting elements in an ordered sequence.

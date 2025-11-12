@@ -1,6 +1,7 @@
 from functools import reduce
-# 1. Create a dictionary of five countries and their capitals. Write a function that takes a country name as
-# input and returns its capital.
+# 1. Create a dictionary of five countries and their capitals. Write a function that takes a country name
+# as input and returns its capital.
+
 countries = [
     {
         "country": "Liberia",
@@ -21,26 +22,24 @@ countries = [
         "country": "Nigeria",
         "capital": "Abuja"
     },
+
     {
         "country": "China",
         "capital": "Beljin"
     }
 ]
 
-#
 # def capital(countries):
 #     try:
 #         country = input(f"Please enter a country: ")
 #         print(f"The capital is: {countries[country]['capital']}")
 #     except:
-#         print("Invalid enrty")
-#
+#         print("Invalid entry")
 #
 # capital(countries)
-
 # 2. Make a dictionary of student names and their scores. Write a function to find the student with the highest score.
-# students = [{"name": "Sally", "grade": 96}, {"name": "Mary", "grade": 60}, {"name": "Kay", "grade": 80}, {"name": "Jane", "grade": 88}, {"name": "Moses", "grade": 100}]
-#
+# students = [{"name": "Sally", "grade": 96}, {"name": "Mary", "grade": 60}, {"name": "Kay", "grade": 80}, {"name":
+# "Jane", "grade": 88}, {"name": "Moses", "grade": 100}]
 #
 # def high_score(students_list):
 #     student = reduce(lambda x, y: x if x["grade"] > y["grade"] else y, students_list)
@@ -68,11 +67,9 @@ employees = {
     }
 }
 
-
 def salary_raise(emp_list):
     for emp in emp_list.values():
         emp["salary"] *= 1.10
-
 
 salary_raise(employees)
 print(employees)
