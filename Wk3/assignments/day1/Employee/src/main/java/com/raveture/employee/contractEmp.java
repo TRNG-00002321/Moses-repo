@@ -27,7 +27,5 @@ public class contractEmp extends Employee {
     public double pay(){
         return contractDuration * hourlyRate;
     }
-    
-
 
 }

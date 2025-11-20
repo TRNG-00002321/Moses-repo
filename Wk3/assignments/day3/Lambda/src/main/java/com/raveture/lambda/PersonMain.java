@@ -20,8 +20,5 @@ public class PersonMain {
         System.out.println(person2.toString());
 
 
-
-
-
     }
 }
