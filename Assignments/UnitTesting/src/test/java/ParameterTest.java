@@ -4,6 +4,8 @@ import  org.junit.jupiter.api.*;
 import org.junit.jupiter.params.*;
 import org.junit.jupiter.params.provider.*;
 
+import java.util.stream.Stream;
+
 
 public class ParameterTest {
 
@@ -34,7 +36,7 @@ public class ParameterTest {
         assertTrue(calc.isPositive(n));
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "{0} + {1} = {2}")
     @CsvSource({
             "3,5,8",
             "10,-4,6",
@@ -46,7 +48,9 @@ public class ParameterTest {
     void add_variousInputs_returnCorrectSum(int a, int b, int expected){
         assertEquals(expected, calc.addition(a, b));
     }
-    @ParameterizedTest
+
+    // Subtract method parameterized test
+    @ParameterizedTest(name = "{0} - {1} = {2}")
     @CsvSource({
             "4, 2, 2",
             "6, 4, 2",
@@ -57,7 +61,8 @@ public class ParameterTest {
         assertEquals(expected, calc.subtract(a, b));
     }
 
-    @ParameterizedTest
+    // Multiply method parameterized test
+    @ParameterizedTest(name="{0} * {1} = {2}")
     @CsvSource({
             "4, 2, 8",
             "6, 4, 24",
@@ -68,7 +73,8 @@ public class ParameterTest {
         assertEquals(expected, calc.multiply(a, b));
     }
 
-    @ParameterizedTest
+    // Divide method parameterized test
+    @ParameterizedTest(name="{0} / {1} = {2}") //  Added custom display name
     @CsvSource({
             "10, 2, 5",
             "4, 2, 2",
@@ -77,6 +83,66 @@ public class ParameterTest {
     })
     void divide_variousInput_returnCorrectQuotient(int a, int b, int expected){
         assertEquals(expected, calc.divide(a, b));
+    }
+
+    // Using Method Source for more complex parameterized tests and custom display names
+    @ParameterizedTest(name = "{0} / {1} = {2}")
+    @MethodSource("provideDivisionTestCases")
+    void divide_variousCases_returnsCorrectQuotient(int a, int b, int expected) {
+        assertEquals(expected, calc.divide(a, b));
+    }
+
+    // The Stream is a sequence of elements supporting sequential and parallel aggregate operations.
+    static Stream<Arguments> provideDivisionTestCases() {
+        return Stream.of(
+                Arguments.of(10, 2, 5),
+                Arguments.of(9, 3, 3),
+                Arguments.of(-10, 2, -5),
+                Arguments.of(7, 2, 3)  // Integer division
+        );
+    }
+
+    // isEven method using Method Source
+    @ParameterizedTest(name = "{0} is even: {1}")
+    @MethodSource("provideIsEvenTestCases")
+    void isEven_variousCases_returnsExpected(int number, boolean expected) {
+        assertEquals(expected, calc.isEven(number));
+    }
+
+    static Stream<Arguments> provideIsEvenTestCases() {
+        return Stream.of(
+                Arguments.of(2, true),
+                Arguments.of(3, false),
+                Arguments.of(0, true),
+                Arguments.of(-4, true),
+                Arguments.of(-5, false)
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("egdeCasesForPower()")
+    void power_edgeCases(int base, int exponent, int expected) {
+        assertEquals(expected, Math.pow(base, exponent));
+    }
+    static Stream<Arguments> egdeCasesForPower() {
+        return Stream.of(
+                Arguments.of(0, 0, 1),   // 0^0 is typically defined as 1
+                Arguments.of(0, 5, 0),   // 0^n = 0 for n > 0
+                Arguments.of(5, 0, 1),   // n^0 = 1 for n > 0
+                Arguments.of(-2, 3, -8), // Negative base with odd exponent
+                Arguments.of(-2, 4, 16)  // Negative base with even exponent
+        );
+    }
+
+    // Custome display names for parameterized tests
+    @ParameterizedTest(name = "Adding {0} and {1} should equal {2}")
+    @CsvSource({
+            "1, 2, 3",
+            "5, 7, 12",
+            "-3, 3, 0"
+    })
+    void add_withCustomDisplayName(int a, int b, int expected) {
+        assertEquals(expected, calc.addition(a, b));
     }
 
 }
