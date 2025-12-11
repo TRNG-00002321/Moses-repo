@@ -142,14 +142,4 @@ public class CalculatorTest {
         // Act & Assert
         assertTrue(calculator.isEven(-2), "-2 is Even");
     }
-
-
-
-
-
-
-
-
-
-
 }
